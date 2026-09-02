@@ -1,0 +1,1012 @@
+{
+  "info": {
+    "_postman_id": "868eed7f-b43a-4ba8-8aa3-74e7296a2a70",
+    "name": "Service Booking and Management Platform",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "40383094"
+  },
+  "item": [
+    {
+      "name": "User",
+      "item": [
+        {
+          "name": "Register",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "Nimal",
+                  "type": "text",
+                  "uuid": "6c0184ca-0130-4508-bce9-b34f21de30e6"
+                },
+                {
+                  "key": "email",
+                  "value": "nimal@gmail.com",
+                  "type": "text",
+                  "uuid": "9ac17ad8-2405-4788-8658-eb4237f3c821"
+                },
+                {
+                  "key": "password",
+                  "value": "Nimal@123",
+                  "type": "text",
+                  "uuid": "0c0e4d8a-ae73-4647-bdc7-fa5c50d233c3"
+                },
+                {
+                  "key": "phone",
+                  "value": "0778986961",
+                  "type": "text",
+                  "uuid": "54935a9e-8459-40c6-a45b-818b4f6bd376"
+                },
+                {
+                  "key": "profileImage",
+                  "type": "file",
+                  "uuid": "acd701bd-1b98-4f76-b20b-1511ed9b8609",
+                  "src": "/Users/charithsiriwardana/Desktop/portrait-handsome-smiling-young-man-folded-arms-smiling-joyful-cheerful-men-crossed-hands-isolated-studio-shot-172869765.webp",
+                  "disabled": true
+                },
+                {
+                  "key": "role",
+                  "value": "PROVIDER",
+                  "type": "text",
+                  "uuid": "5f7a813c-b971-41ab-8a1c-24bf1ffb6493",
+                  "disabled": true
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{link}}/auth/register",
+              "host": [
+                "{{link}}"
+              ],
+              "path": [
+                "auth",
+                "register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"email\":\"nimal@gmail.com\",\n    \"password\":\"Nimal@123\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{link}}/auth/login",
+              "host": [
+                "{{link}}"
+              ],
+              "path": [
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Me",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTk3YzI5NTA3OTA1NDIyMjQxODU1N2IiLCJyb2xlIjoiQWRtaW4iLCJpYXQiOjE3ODgzMzExMTcsImV4cCI6MTc4ODkzNTkxN30.jQXQkBjSNXdfce4oq_OiuKI25sLfZBgyewcfH37jLxY",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{link}}/auth/me",
+              "host": [
+                "{{link}}"
+              ],
+              "path": [
+                "auth",
+                "me"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Logout",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTk3YzI5NTA3OTA1NDIyMjQxODU1N2IiLCJyb2xlIjoiQWRtaW4iLCJpYXQiOjE3ODgzMzE5ODAsImV4cCI6MTc4ODkzNjc4MH0.1v5Cfr7XnV8FLgYTGti2ioSETr7wskVs-meyCDjxwSM",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{link}}/auth/logout",
+              "host": [
+                "{{link}}"
+              ],
+              "path": [
+                "auth",
+                "logout"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Profile Details",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTk3YmZkNjA3OTA1NDIyMjQxODU1N2EiLCJyb2xlIjoiQ1VTVE9NRVIiLCJpYXQiOjE3ODgzMzIxMzcsImV4cCI6MTc4ODkzNjkzN30.NTeLVTkoD9NQ_WfA3CvbEBObYAu9SOJQYzC7UnQ0MYI",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\":\"Charith Siriwardana\",\n    \"phone\":\"0778518210\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{link}}/auth/profile",
+              "host": [
+                "{{link}}"
+              ],
+              "path": [
+                "auth",
+                "profile"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Change Password",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTk3YmZkNjA3OTA1NDIyMjQxODU1N2EiLCJyb2xlIjoiQ1VTVE9NRVIiLCJpYXQiOjE3ODgzMzIyODYsImV4cCI6MTc4ODkzNzA4Nn0.wCyR9U-3yh74WmaOy9oeeJriu8RqnMrbjrZfNdPdLbo",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"currentPassword\":\"12345678\",\n    \"newPassword\":\"123456789\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{link}}/auth/change-password",
+              "host": [
+                "{{link}}"
+              ],
+              "path": [
+                "auth",
+                "change-password"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Change Profile Image",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTk3YmZkNjA3OTA1NDIyMjQxODU1N2EiLCJyb2xlIjoiQ1VTVE9NRVIiLCJpYXQiOjE3ODgzMzI2OTMsImV4cCI6MTc4ODkzNzQ5M30.-_ngLw86hKav0D8VUsM8ZuJ5vQoNMY-5R34ux2X_byI",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "profileImage",
+                  "type": "file",
+                  "uuid": "ffb08f8d-7879-4d0e-b465-edd7f1cbdb54",
+                  "src": "/Users/charithsiriwardana/Desktop/portrait-handsome-smiling-young-man-folded-arms-smiling-joyful-cheerful-men-crossed-hands-isolated-studio-shot-172869765.webp"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{link}}/auth/profile-image",
+              "host": [
+                "{{link}}"
+              ],
+              "path": [
+                "auth",
+                "profile-image"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Services",
+      "item": [
+        {
+          "name": "Create Services",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTk3YmZkNjA3OTA1NDIyMjQxODU1N2EiLCJyb2xlIjoiQ1VTVE9NRVIiLCJpYXQiOjE3ODgzMzI2OTMsImV4cCI6MTc4ODkzNzQ5M30.-_ngLw86hKav0D8VUsM8ZuJ5vQoNMY-5R34ux2X_byI",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"category\": \"tutoring\",\n    \"name\": \"Mathematics Tutoring\",\n    \"description\": \"Math lessons for students\",\n    \"price\": 2500,\n    \"duration\": 60\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{link}}/services",
+              "host": [
+                "{{link}}"
+              ],
+              "path": [
+                "services"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Services",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTk3YmZkNjA3OTA1NDIyMjQxODU1N2EiLCJyb2xlIjoiQ1VTVE9NRVIiLCJpYXQiOjE3ODgzMzI2OTMsImV4cCI6MTc4ODkzNzQ5M30.-_ngLw86hKav0D8VUsM8ZuJ5vQoNMY-5R34ux2X_byI",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"category\": \"tutoring\",\n    \"name\": \"Mathematics Tutoring\",\n    \"description\": \"Math lessons for students\",\n    \"price\": 2500,\n    \"duration\": 60\n}"
+            },
+            "url": {
+              "raw": "{{link}}/services",
+              "host": [
+                "{{link}}"
+              ],
+              "path": [
+                "services"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get By ID",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTk3YmZkNjA3OTA1NDIyMjQxODU1N2EiLCJyb2xlIjoiQ1VTVE9NRVIiLCJpYXQiOjE3ODgzMzI2OTMsImV4cCI6MTc4ODkzNzQ5M30.-_ngLw86hKav0D8VUsM8ZuJ5vQoNMY-5R34ux2X_byI",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"category\": \"tutoring\",\n    \"name\": \"Mathematics Tutoring\",\n    \"description\": \"Math lessons for students\",\n    \"price\": 2500,\n    \"duration\": 60\n}"
+            },
+            "url": {
+              "raw": "{{link}}/services/6a97e128488f6f2734491462",
+              "host": [
+                "{{link}}"
+              ],
+              "path": [
+                "services",
+                "6a97e128488f6f2734491462"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Service",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTk3YmZkNjA3OTA1NDIyMjQxODU1N2EiLCJyb2xlIjoiQ1VTVE9NRVIiLCJpYXQiOjE3ODgzMzI2OTMsImV4cCI6MTc4ODkzNzQ5M30.-_ngLw86hKav0D8VUsM8ZuJ5vQoNMY-5R34ux2X_byI",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"category\": \"tutoring\",\n    \"name\": \"Mathematics Tutoring\",\n    \"description\": \"Math lessons for students\",\n    \"price\": 2530,\n    \"duration\": 50\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{link}}/services/6a97e128488f6f2734491462",
+              "host": [
+                "{{link}}"
+              ],
+              "path": [
+                "services",
+                "6a97e128488f6f2734491462"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Services",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTk3YmZkNjA3OTA1NDIyMjQxODU1N2EiLCJyb2xlIjoiQ1VTVE9NRVIiLCJpYXQiOjE3ODgzMzI2OTMsImV4cCI6MTc4ODkzNzQ5M30.-_ngLw86hKav0D8VUsM8ZuJ5vQoNMY-5R34ux2X_byI",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{link}}/services/6a97e128488f6f2734491462",
+              "host": [
+                "{{link}}"
+              ],
+              "path": [
+                "services",
+                "6a97e128488f6f2734491462"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Admin Actions",
+      "item": [
+        {
+          "name": "Get Users",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTk3YzI5NTA3OTA1NDIyMjQxODU1N2IiLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3ODgzMzk5NzYsImV4cCI6MTc4ODk0NDc3Nn0.R7J-Me_kq2_ValNCleBqz3Lb6FaVWoTB1a0j3qO8jg0",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"category\": \"tutoring\",\n    \"name\": \"Mathematics Tutoring\",\n    \"description\": \"Math lessons for students\",\n    \"price\": 2500,\n    \"duration\": 60\n}"
+            },
+            "url": {
+              "raw": "{{link}}/users",
+              "host": [
+                "{{link}}"
+              ],
+              "path": [
+                "users"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Users By ID",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTk3YzI5NTA3OTA1NDIyMjQxODU1N2IiLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3ODgzMzk5NzYsImV4cCI6MTc4ODk0NDc3Nn0.R7J-Me_kq2_ValNCleBqz3Lb6FaVWoTB1a0j3qO8jg0",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{link}}/users/6a97c32a079054222418557c",
+              "host": [
+                "{{link}}"
+              ],
+              "path": [
+                "users",
+                "6a97c32a079054222418557c"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "User Details Update",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTk3YzI5NTA3OTA1NDIyMjQxODU1N2IiLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3ODgzMzk5NzYsImV4cCI6MTc4ODk0NDc3Nn0.R7J-Me_kq2_ValNCleBqz3Lb6FaVWoTB1a0j3qO8jg0",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n        \"name\": \"Sman Kakuledrf\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{link}}/users/6a97c32a079054222418557c",
+              "host": [
+                "{{link}}"
+              ],
+              "path": [
+                "users",
+                "6a97c32a079054222418557c"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update User Status",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTk3YzI5NTA3OTA1NDIyMjQxODU1N2IiLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3ODgzMzk5NzYsImV4cCI6MTc4ODk0NDc3Nn0.R7J-Me_kq2_ValNCleBqz3Lb6FaVWoTB1a0j3qO8jg0",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"isActive\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{link}}/users/6a97c32a079054222418557c/status",
+              "host": [
+                "{{link}}"
+              ],
+              "path": [
+                "users",
+                "6a97c32a079054222418557c",
+                "status"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Availability",
+      "item": [
+        {
+          "name": "Get Availability",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTk3YzI5NTA3OTA1NDIyMjQxODU1N2IiLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3ODgzMzk5NzYsImV4cCI6MTc4ODk0NDc3Nn0.R7J-Me_kq2_ValNCleBqz3Lb6FaVWoTB1a0j3qO8jg0",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n        \"name\": \"Sman Kakuledrf\"\n}"
+            },
+            "url": {
+              "raw": "{{link}}/availability/6a97bfd6079054222418557a",
+              "host": [
+                "{{link}}"
+              ],
+              "path": [
+                "availability",
+                "6a97bfd6079054222418557a"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Availability",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTk3YmZkNjA3OTA1NDIyMjQxODU1N2EiLCJyb2xlIjoiUFJPVklERVIiLCJpYXQiOjE3ODgzNDIzNTAsImV4cCI6MTc4ODk0NzE1MH0.mRUrdOhDQFUVy0JK65amB4ZrC-Pi7apTwnR6MvwJhXg",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"day\": \"MONDAY\",\n  \"startTime\": \"09:00\",\n  \"endTime\": \"17:00\",\n  \"isAvailable\": true\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{link}}/availability",
+              "host": [
+                "{{link}}"
+              ],
+              "path": [
+                "availability"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Availability",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTk3YmZkNjA3OTA1NDIyMjQxODU1N2EiLCJyb2xlIjoiUFJPVklERVIiLCJpYXQiOjE3ODgzNDIzNTAsImV4cCI6MTc4ODk0NzE1MH0.mRUrdOhDQFUVy0JK65amB4ZrC-Pi7apTwnR6MvwJhXg",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"day\": \"MONDAY\",\n  \"startTime\": \"10:00\",\n  \"endTime\": \"17:00\",\n  \"isAvailable\": true\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{link}}/availability/6a97f0888808d9e94c32156c",
+              "host": [
+                "{{link}}"
+              ],
+              "path": [
+                "availability",
+                "6a97f0888808d9e94c32156c"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Availability",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTk3YmZkNjA3OTA1NDIyMjQxODU1N2EiLCJyb2xlIjoiUFJPVklERVIiLCJpYXQiOjE3ODgzNDIzNTAsImV4cCI6MTc4ODk0NzE1MH0.mRUrdOhDQFUVy0JK65amB4ZrC-Pi7apTwnR6MvwJhXg",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{link}}/availability/6a97f0888808d9e94c32156c",
+              "host": [
+                "{{link}}"
+              ],
+              "path": [
+                "availability",
+                "6a97f0888808d9e94c32156c"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Booking",
+      "item": [
+        {
+          "name": "Create Booking",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTk3ZjJiNjg4MDhkOWU5NGMzMjE1NmYiLCJyb2xlIjoiQ1VTVE9NRVIiLCJpYXQiOjE3ODgzNDMwMDIsImV4cCI6MTc4ODk0NzgwMn0.M_UJAELVakw3EN6o0NS4J4j3D_9CeAxKXhBCzyupZ5k",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"serviceId\": \"6a97e128488f6f2734491462\",\n  \"bookingDate\": \"2026-09-07\",\n  \"startTime\": \"10:00\",\n  \"endTime\": \"11:00\",\n  \"notes\": \"I need help with algebra.\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{link}}/booking",
+              "host": [
+                "{{link}}"
+              ],
+              "path": [
+                "booking"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "My Bookings",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTk3ZjJiNjg4MDhkOWU5NGMzMjE1NmYiLCJyb2xlIjoiQ1VTVE9NRVIiLCJpYXQiOjE3ODgzNDMwMDIsImV4cCI6MTc4ODk0NzgwMn0.M_UJAELVakw3EN6o0NS4J4j3D_9CeAxKXhBCzyupZ5k",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"serviceId\": \"6a97e128488f6f2734491462\",\n  \"bookingDate\": \"2026-09-07\",\n  \"startTime\": \"10:00\",\n  \"endTime\": \"11:00\",\n  \"notes\": \"I need help with algebra.\"\n}"
+            },
+            "url": {
+              "raw": "{{link}}/booking/my-bookings",
+              "host": [
+                "{{link}}"
+              ],
+              "path": [
+                "booking",
+                "my-bookings"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Provider View Booking",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTk3YmZkNjA3OTA1NDIyMjQxODU1N2EiLCJyb2xlIjoiUFJPVklERVIiLCJpYXQiOjE3ODgzNDMzMzgsImV4cCI6MTc4ODk0ODEzOH0.JWsg6CdXqIt9apd9tz2Ne7yals1e4AtSU3rbq1pCFhg",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"serviceId\": \"6a97e128488f6f2734491462\",\n  \"bookingDate\": \"2026-09-07\",\n  \"startTime\": \"10:00\",\n  \"endTime\": \"11:00\",\n  \"notes\": \"I need help with algebra.\"\n}"
+            },
+            "url": {
+              "raw": "{{link}}/booking/provider",
+              "host": [
+                "{{link}}"
+              ],
+              "path": [
+                "booking",
+                "provider"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Confirm Booking",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTk3YmZkNjA3OTA1NDIyMjQxODU1N2EiLCJyb2xlIjoiUFJPVklERVIiLCJpYXQiOjE3ODgzNDMzMzgsImV4cCI6MTc4ODk0ODEzOH0.JWsg6CdXqIt9apd9tz2Ne7yals1e4AtSU3rbq1pCFhg",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"serviceId\": \"6a97e128488f6f2734491462\",\n  \"bookingDate\": \"2026-09-07\",\n  \"startTime\": \"10:00\",\n  \"endTime\": \"11:00\",\n  \"notes\": \"I need help with algebra.\"\n}"
+            },
+            "url": {
+              "raw": "{{link}}/booking/6a97f3688808d9e94c321570/confirm",
+              "host": [
+                "{{link}}"
+              ],
+              "path": [
+                "booking",
+                "6a97f3688808d9e94c321570",
+                "confirm"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Reject Booking",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTk3YmZkNjA3OTA1NDIyMjQxODU1N2EiLCJyb2xlIjoiUFJPVklERVIiLCJpYXQiOjE3ODgzNDMzMzgsImV4cCI6MTc4ODk0ODEzOH0.JWsg6CdXqIt9apd9tz2Ne7yals1e4AtSU3rbq1pCFhg",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{link}}/booking/6a97f52b8808d9e94c321571/reject",
+              "host": [
+                "{{link}}"
+              ],
+              "path": [
+                "booking",
+                "6a97f52b8808d9e94c321571",
+                "reject"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Cancel Booking",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTk3YmZkNjA3OTA1NDIyMjQxODU1N2EiLCJyb2xlIjoiUFJPVklERVIiLCJpYXQiOjE3ODgzNDMzMzgsImV4cCI6MTc4ODk0ODEzOH0.JWsg6CdXqIt9apd9tz2Ne7yals1e4AtSU3rbq1pCFhg",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{link}}/booking/6a97f52b8808d9e94c321571/cancel",
+              "host": [
+                "{{link}}"
+              ],
+              "path": [
+                "booking",
+                "6a97f52b8808d9e94c321571",
+                "cancel"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Complete Booking",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTk3YmZkNjA3OTA1NDIyMjQxODU1N2EiLCJyb2xlIjoiUFJPVklERVIiLCJpYXQiOjE3ODgzNDMzMzgsImV4cCI6MTc4ODk0ODEzOH0.JWsg6CdXqIt9apd9tz2Ne7yals1e4AtSU3rbq1pCFhg",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{link}}/booking/6a97f3688808d9e94c321570/complete",
+              "host": [
+                "{{link}}"
+              ],
+              "path": [
+                "booking",
+                "6a97f3688808d9e94c321570",
+                "complete"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "link",
+      "value": ""
+    },
+    {
+      "key": "admin-actions-token",
+      "value": ""
+    }
+  ]
+}

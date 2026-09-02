@@ -44,6 +44,21 @@ Ensure your environment meets the following requirements before setup:
 
 ---
 
+## 🧪 Postman Collection
+
+A pre-configured Postman collection is included in this repository for fast testing.
+
+### 📥 Download Collection File
+* 📄 [Download Postman Collection JSON](./postman/Service Booking and Management Platform.postman_collection.json)
+
+### 🚀 How to Import & Test:
+1. Open **Postman**.
+2. Click **Import** (top left corner) and choose the `service_booking_api.json` file.
+3. Set up your environment variable:
+    * `baseUrl`: `http://localhost:3000/`
+4. Register a user (`POST /auth/register`) and log in (`POST /auth/login`) to receive your JWT.
+5. Add your token to the **Bearer Token** field in Postman's `Authorization` tab.
+
 ## 🚀 Quick Start Guide
 
 ### 1. Repository Setup
