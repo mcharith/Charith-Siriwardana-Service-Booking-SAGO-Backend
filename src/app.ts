@@ -2,6 +2,7 @@ import express from "express";
 import path from "path";
 import authRoutes from "./routes/auth.routes";
 import serviceRoutes from "./routes/service.routes";
+import usersRoutes from "./routes/user.routes";
 
 
 const app = express();
@@ -21,5 +22,6 @@ app.get("/", (req, res) => {
 
 app.use("/auth", authRoutes);
 app.use("/services", serviceRoutes);
+app.use("/users", usersRoutes);
 
 export default app;
