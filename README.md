@@ -49,7 +49,7 @@ Ensure your environment meets the following requirements before setup:
 A pre-configured Postman collection is included in this repository for fast testing.
 
 ### 📥 Download Collection File
-* 📄 [Download Postman Collection JSON](./postman/Service Booking and Management Platform.postman_collection.json)
+* 📄 [Download Postman Collection JSON](<./postman/Service Booking and Management Platform.postman_collection.json>)
 
 ### 🚀 How to Import & Test:
 1. Open **Postman**.
